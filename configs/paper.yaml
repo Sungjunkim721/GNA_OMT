@@ -1,0 +1,35 @@
+# Settings used for the main paper experiments.
+model:
+  max_layers: 24
+  embedding_dim: 400
+  num_blocks: 8
+  output_dim: 301
+
+materials:
+  min_index: 0
+  max_index: 10
+
+thickness_nm:
+  min: 20
+  max: 100
+
+spectrum:
+  wavelength_min_nm: 400
+  wavelength_max_nm: 1000
+  wavelength_step_nm: 2
+
+inverse_design:
+  admissible_layer_numbers: [4, 8, 12, 16, 20, 24]
+  population_size: 3000
+  num_iterations: 1000
+  learning_rate: 0.01
+  weight_thickness: 1.0
+  weight_material: 1.0
+  weight_constraint_unconstrained: 0.0
+  weight_constraint_constrained: 1.0
+
+# First-layer constraint used in the flexibility experiment.
+constraint:
+  layer_index: 0
+  thickness_nm: 100
+  material: SiO2
